@@ -17,6 +17,11 @@ const useStyles = makeStyles(() => ({
     width: '80px',
     marginLeft: '-24px',
   },
+  appleLogo: {
+    height: '40px',
+    marginTop: '20px',
+    marginLeft: '20px',
+  },
   links: {
     textTransform: 'none',
     color: '#707070',
@@ -41,9 +46,9 @@ const Navbar = () => {
       <AppBar position="static" style={{boxShadow: 'none'}}>
         <Toolbar className={classes.navStyle}>
           <Typography className={classes.logo}>
-            A
+            <img className={classes.appleLogo} src="https://www.transparentpng.com/thumb/apple-logo/UyOL60-apple-logo-wonderful-picture-images.png" alt="Apple Logo" />
           </Typography>
-          <div style={{marginLeft: 'auto', marginRight: '140px'}}>
+          <div style={{marginLeft: 'auto', marginRight: '100px'}}>
             <Button
               component={Link}
               to="/iphone"
