@@ -28,12 +28,14 @@ const useStyles = makeStyles(() => ({
     color: '#FF2D55',
     fontSize: '28px',
     paddingBottom: '25px',
+    fontWeight: '600',
   },
   bigText: {
     color: '#000',
     fontSize: '90px',
     lineHeight: 1,
-    paddingBottom: '150px'
+    paddingBottom: '150px',
+    fontWeight: '700',
   },
   text: {
     color: '#999',
@@ -53,6 +55,7 @@ const useStyles = makeStyles(() => ({
     fontSize: '35px',
     color: '#CCC',
     lineHeight: 0.8,
+    fontWeight: '600'
   },
   buttons: {
     paddingTop: '50px',

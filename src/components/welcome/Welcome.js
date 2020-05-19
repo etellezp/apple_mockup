@@ -18,6 +18,7 @@ const useStyles = makeStyles(() => ({
     fontSize: '70px',
     marginRight: '80px',
     marginBottom: '150px',
+    fontWeight: '700',
   },
   products: {
     color: '#5AC8FA',

@@ -38,7 +38,7 @@ function Register(props) {
       auth.login()
       props.history.push('/apple')
   }
-
+  
   return (
     <div style={{overflowX: 'hidden'}}>
       <Grid container className={classes.gridStyle} justify="center" alignItems="center">

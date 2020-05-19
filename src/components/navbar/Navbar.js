@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { AppBar, Toolbar, Typography, Button } from '@material-ui/core'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import auth from '../../components/auth/Auth'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -38,7 +40,7 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-const Navbar = () => {
+const Navbar = (props) => {
   const classes = useStyles()
 
   return (
@@ -50,7 +52,7 @@ const Navbar = () => {
               <img className={classes.appleLogo} src="https://www.transparentpng.com/thumb/apple-logo/UyOL60-apple-logo-wonderful-picture-images.png" alt="Apple Logo" />
             </Link>
           </Typography>
-          <div style={{marginLeft: 'auto', marginRight: '100px'}}>
+          <div style={{marginLeft: 'auto', marginRight: '50px'}}>
             <Button
               component={Link}
               to="/iphone"
@@ -76,6 +78,16 @@ const Navbar = () => {
               className={classes.notifyMe}
             >
               Notify me
+            </Button>
+            <Button
+              component={Link}
+              to="/login"
+              onClick={() => {
+                auth.signout()
+              }}
+              className={classes.links}
+            >
+              <ExitToAppIcon />
             </Button>
           </div>
         </Toolbar>
