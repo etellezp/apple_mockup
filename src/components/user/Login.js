@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Card, CardContent, TextField, Typography, Button } from '@material-ui/core'
 import auth from '../auth/Auth'
@@ -81,8 +82,9 @@ function Register(props) {
             </CardContent>
           </Card>
           <Typography style={{marginTop: '10px'}}>
-            Not registered? Sign-up
+            Not registered?
           </Typography>
+          <Link to="/register" style={{color: '#5AC8FA', textDecoration: 'none'}}>Sign-up</Link>
         </Grid>
       </Grid>
     </div>

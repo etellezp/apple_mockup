@@ -46,7 +46,9 @@ const Navbar = () => {
       <AppBar position="static" style={{boxShadow: 'none'}}>
         <Toolbar className={classes.navStyle}>
           <Typography className={classes.logo}>
-            <img className={classes.appleLogo} src="https://www.transparentpng.com/thumb/apple-logo/UyOL60-apple-logo-wonderful-picture-images.png" alt="Apple Logo" />
+            <Link to='/apple'>
+              <img className={classes.appleLogo} src="https://www.transparentpng.com/thumb/apple-logo/UyOL60-apple-logo-wonderful-picture-images.png" alt="Apple Logo" />
+            </Link>
           </Typography>
           <div style={{marginLeft: 'auto', marginRight: '100px'}}>
             <Button
