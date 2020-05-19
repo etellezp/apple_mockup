@@ -8,7 +8,6 @@ import whiteWatch from '../../assets/whiteWatch.png'
 import PhoneIphoneTwoToneIcon from '@material-ui/icons/PhoneIphoneTwoTone'
 import LaptopMacTwoToneIcon from '@material-ui/icons/LaptopMacTwoTone'
 import WatchTwoToneIcon from '@material-ui/icons/WatchTwoTone'
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
