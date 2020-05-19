@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Card, CardContent, TextField, Typography, Button } from '@material-ui/core'
+import auth from '../auth/Auth'
 
 const useStyles = makeStyles(() => ({
   gridStyle: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 
-function Register() {
+function Register(props) {
   const classes = useStyles()
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -34,7 +35,8 @@ function Register() {
 
   const handleSubmit = (e) => {
       e.preventDefault()
-      console.log("form submited");
+      auth.signup()
+      props.history.push('/apple')
   }
 
   return (
