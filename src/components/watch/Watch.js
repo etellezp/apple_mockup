@@ -63,6 +63,11 @@ const useStyles = makeStyles(() => ({
   },
   button: {
     color: '#707070',
+  },
+  hover: {
+    "&:hover": {
+      transform: 'scale(1.5)'
+    }
   }
 }))
 
@@ -116,6 +121,7 @@ function Watch() {
                 component={Link}
                 to="/iphone"
                 style={{display: 'block', color: '#CCC'}}
+                className={classes.hover}
               >
                 <PhoneIphoneTwoToneIcon />
               </IconButton>
@@ -123,6 +129,7 @@ function Watch() {
                 component={Link}
                 to="/macbook"
                 style={{display: 'block', color: '#CCC'}}
+                className={classes.hover}
               >
                 <LaptopMacTwoToneIcon />
               </IconButton>
@@ -131,6 +138,7 @@ function Watch() {
                 to="/watch"
                 style={{display: 'block', color: '#707070'}}
                 disabled
+                className={classes.hover}
               >
                 <WatchTwoToneIcon />
               </IconButton>

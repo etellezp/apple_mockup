@@ -33,6 +33,9 @@ const useStyles = makeStyles(() => ({
   icon: {
     color: '#CCC',
     transform: 'scale(1.2)',
+    "&:hover": {
+      transform: 'scale(1.5)'
+    }
   },
   appleLogo: {
     height: '300px',
