@@ -1,11 +1,12 @@
-import React from 'react';
-import { Link, Redirect } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
-import { AppBar, Toolbar, Typography, Button } from '@material-ui/core'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { AppBar, Toolbar, Typography, Button, Hidden, Menu, MenuItem } from '@material-ui/core'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import MenuIcon from '@material-ui/icons/Menu'
 import auth from '../../components/auth/Auth'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -37,11 +38,21 @@ const useStyles = makeStyles(() => ({
     width: '156px',
     borderRadius: '23px',
     fontSize: '18px'
-  }
+  },
 }))
 
 const Navbar = (props) => {
   const classes = useStyles()
+
+  const [anchorEl, setAnchorEl] = React.useState(null)
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
 
   return (
     <div className={classes.root}>
@@ -52,44 +63,94 @@ const Navbar = (props) => {
               <img className={classes.appleLogo} src="https://www.transparentpng.com/thumb/apple-logo/UyOL60-apple-logo-wonderful-picture-images.png" alt="Apple Logo" />
             </Link>
           </Typography>
-          <div style={{marginLeft: 'auto', marginRight: '50px'}}>
-            <Button
-              component={Link}
-              to="/iphone"
-              className={classes.links}
-            >
-              iPhone
-            </Button>
-            <Button
-              component={Link}
-              to="/macbook"
-              className={classes.links}
-            >
-              Macbook Pro
-            </Button>
-            <Button
-              component={Link}
-              to="/watch"
-              className={classes.links}
-            >
-              Watch
-            </Button>
-            <Button
-              className={classes.notifyMe}
-            >
-              Notify me
-            </Button>
-            <Button
-              component={Link}
-              to="/login"
-              onClick={() => {
-                auth.signout()
-              }}
-              className={classes.links}
-            >
-              <ExitToAppIcon />
-            </Button>
-          </div>
+          <Hidden smDown={true}>
+            <div style={{marginLeft: 'auto', marginRight: '50px'}}>
+              <Button
+                component={Link}
+                to="/iphone"
+                className={classes.links}
+              >
+                iPhone
+              </Button>
+              <Button
+                component={Link}
+                to="/macbook"
+                className={classes.links}
+              >
+                Macbook Pro
+              </Button>
+              <Button
+                component={Link}
+                to="/watch"
+                className={classes.links}
+              >
+                Watch
+              </Button>
+              <Button
+                className={classes.notifyMe}
+              >
+                Notify me
+              </Button>
+              <Button
+                component={Link}
+                to="/login"
+                onClick={() => {
+                  auth.signout()
+                }}
+                className={classes.links}
+              >
+                <ExitToAppIcon />
+              </Button>
+            </div>
+          </Hidden>
+          <Hidden mdUp={true}>
+            <div style={{marginLeft: 'auto'}}>
+              <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                <MenuIcon />
+              </Button>
+              <Menu
+                id="simple-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem
+                  component={Link}
+                  to="/iphone"
+                >
+                  iPhone
+                </MenuItem>
+                <MenuItem
+                  component={Link}
+                  to="/macbook"
+                >
+                  Macbook Pro
+                </MenuItem>
+                <MenuItem
+                  component={Link}
+                  to="/watch"
+                >
+                  Watch
+                </MenuItem>
+                <MenuItem
+                  component={Link}
+                  to="/watch"
+                >
+                  Notify Me
+                </MenuItem>
+                <MenuItem
+                  component={Link}
+                  to="/login"
+                  onClick={() => {
+                    auth.signout()
+                  }}
+                >
+                  Logout
+                </MenuItem>
+              </Menu>
+            </div>
+          </Hidden>
         </Toolbar>
       </AppBar>
     </div>

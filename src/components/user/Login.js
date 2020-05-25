@@ -38,11 +38,11 @@ function Register(props) {
       auth.login()
       props.history.push('/apple')
   }
-  
+
   return (
     <div style={{overflowX: 'hidden'}}>
       <Grid container className={classes.gridStyle} justify="center" alignItems="center">
-        <Grid item sm={4}>
+        <Grid item xs={10} sm={7} md={6} lg={4}>
           <Card>
             <CardContent>
               <Typography variant="h3" className={classes.signup} align="center">

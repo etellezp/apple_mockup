@@ -7,12 +7,15 @@ import PhoneIphoneTwoToneIcon from '@material-ui/icons/PhoneIphoneTwoTone'
 import LaptopMacTwoToneIcon from '@material-ui/icons/LaptopMacTwoTone'
 import WatchTwoToneIcon from '@material-ui/icons/WatchTwoTone'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   gridStyle: {
     background: 'linear-gradient(90deg, #F2F2F2 0%, #FFFFFF 100%)',
     height: `calc(100vh - 80px)`,
     marginLeft: '80px',
     width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '0px'
+    },
   },
   title: {
     fontSize: '70px',
@@ -21,14 +24,25 @@ const useStyles = makeStyles(() => ({
     fontWeight: '700',
     position: 'relative',
     zIndex: 1,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '60px',
+      marginRight: 0,
+      marginTop: '-30px',
+    },
   },
   products: {
     color: '#5AC8FA',
     marginRight: '80px',
     marginBottom: '150px',
+    [theme.breakpoints.down('sm')]: {
+      marginRight: 0,
+    },
   },
   icons: {
     marginRight: '80px',
+    [theme.breakpoints.down('sm')]: {
+      marginRight: 0,
+    },
   },
   icon: {
     color: '#CCC',
@@ -41,6 +55,9 @@ const useStyles = makeStyles(() => ({
     height: '300px',
     marginRight: '80px',
     marginBottom: '-180px',
+    [theme.breakpoints.down('md')]: {
+      marginRight: 0,
+    },
   },
 }))
 
